@@ -19,7 +19,7 @@ class secsmall{
     }
 }
 
-public class Secondsmall {
+public class Secondlargest {
     public static void main(String[] args){
     int[] arr = {10,20,50,6,40};
     secsmall obj=new secsmall();
