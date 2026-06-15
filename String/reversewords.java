@@ -20,6 +20,7 @@ public class reversewords {
         String s="Kolkata";
         reverse obj=new reverse();
         System.out.print(obj.reverse2(s));
+        
 
 
     }
