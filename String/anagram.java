@@ -1,3 +1,7 @@
+//anagram is a type of strings where order of alphabets are different
+//TC=NlogN
+
+
 import java.util.*;
 
 class anagram1{
