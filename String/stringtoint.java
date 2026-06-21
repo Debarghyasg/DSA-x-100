@@ -1,9 +1,13 @@
 import java.util.*;
 
 class stringtoint1{
-    int stringtoint2(String s){
+    long stringtoint2(String s){
+        if(s.isEmpty()){
+            return 0;
+        }
         s=s.trim();
-        int num=0;
+        
+        long num=0;
         int sign=0;
         int i=0;
         int n=s.length();
@@ -24,14 +28,17 @@ class stringtoint1{
         }
         while(i<n && Character.isDigit(s.charAt(i))){
             num=((num*10)+s.charAt(i)-'0');
+            if (sign * num > Integer.MAX_VALUE) {
+                return Integer.MAX_VALUE;
+            }
+            if (sign * num < Integer.MIN_VALUE) {
+                return Integer.MIN_VALUE;
+            }
             i++;
 
         }
         num=sign*num;
-        if(num>Integer.MAX_VALUE){
-            return Integer.MAX_VALUE;
 
-        }
 
         return num;
 
