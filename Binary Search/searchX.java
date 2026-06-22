@@ -1,40 +1,28 @@
 import java.util.*;
 class searchX1{
-    void searchX2(int[] arr,int target){
-        int low=arr[0];
-        int high=arr[arr.length-1];
-        int mid=(low+high)/2;
-        if(target<mid){
-        for(int i=0;i<mid;i++){
-            if(arr[i]==target){
-                System.out.print(i);
-                break;
+    int searchX2(int[] arr,int target){
+       int low = 0;                  // Start index
+        int high = arr.length - 1;    // End index
+        
+        while (low <= high) {
+            int mid = low + (high - low) / 2; // Safe middle calculation
+
+            // Case 1: Target is found
+            if (arr[mid] == target) {
+                return mid; // Exits the loop AND the method instantly
             }
-            else{
-                System.out.print(-1);
+            // Case 2: Target is smaller, look in the left half
+            else if (target < arr[mid]) {
+                high = mid - 1;
             }
-
-
-        }
-        }
-        else if(target>mid){
-            for(int i=mid;i<arr.length;i++){
-            if(arr[i]==target){
-                System.out.print(i);
-                break;
+            // Case 3: Target is larger, look in the right half
+            else {
+                low = mid + 1;
             }
-            else{
-                System.out.print(-1);
-            }
-
-
         }
 
-
-        }
-        else{
-
-        }
+        // If the loop finished and we never found the target
+        return -1;
 
         }
 
@@ -42,10 +30,10 @@ class searchX1{
 
 public class searchX {
     public static void main(String[] args){
-        int[] arr={2,3,4,5,6,7,8,9,10}; 
-        int target=8;
+        int[] arr={-1,0,3,5,9,2}; 
+        int target=9;
         searchX1 obj=new searchX1();
-        obj.searchX2(arr,target);
+        System.out.println(obj.searchX2(arr,target));
 
     }
     
