@@ -11,14 +11,10 @@ class searchinsert1{
                     
 
                 }
-                else if(arr[mid]>=target){
-                    index=mid;
-                    high=mid-1;
+                else {
+                    high=mid;
                 }
-                // else{
-                //     index=mid;
-                //     return index;
-                // }
+
             }
         }
         return index;
