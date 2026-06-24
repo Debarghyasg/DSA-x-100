@@ -3,13 +3,14 @@ class lowerbound1{
     int lowerbound2(int[] arr,int target){
         int low=0;
         int high=arr.length-1;
-        int mid=(low+high)/2;
+        
         while(low<high){
+        int mid=(low+high)/2;
         if(arr[mid]>=target){
             return mid;
         }
         else if(arr[mid]<target){
-            low+=1;
+            low=mid+1;
         }
         else{
             return arr.length;
